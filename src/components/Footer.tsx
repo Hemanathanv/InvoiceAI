@@ -9,10 +9,14 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="h-8 w-8 rounded-full bg-gradient-primary flex items-center justify-center">
-                <span className="font-bold text-white text-lg">IE</span>
-              </div>
-              <span className="font-bold text-xl">InvoiceExtract</span>
+            <div className="h-8 w-8 overflow-hidden rounded-full bg-white">
+            <img
+              src="/placeholder.svg"
+              alt="InvoiceExtract Logo"
+              className="h-full w-full object-contain"
+            />
+          </div>
+              <span className="font-bold text-xl">InvoiceAI</span>
             </div>
             <p className="text-muted-foreground max-w-md">
               Extract data from your invoices effortlessly with our AI-powered platform. 
@@ -59,7 +63,7 @@ const Footer: React.FC = () => {
         
         <div className="mt-10 border-t pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} InvoiceExtract. All rights reserved.
+            &copy; {new Date().getFullYear()} InvoiceAI. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <a href="#" className="text-muted-foreground hover:text-primary">

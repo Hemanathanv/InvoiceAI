@@ -18,7 +18,7 @@ interface PricingCardProps {
   features: PricingFeature[];
   buttonText: string;
   popular?: boolean;
-  tier: 'free' | 'pro' | 'enterprise';
+  tier: 'free' | 'pro' | 'enterprise'|'authorised';
 }
 
 const PricingCard: React.FC<PricingCardProps> = ({
@@ -35,6 +35,12 @@ const PricingCard: React.FC<PricingCardProps> = ({
 
   const handleAction = () => {
     if (tier === 'enterprise') {
+      // Enterprise contact form would go here
+      window.alert('A sales representative will contact you shortly.');
+      return;
+    }
+
+    if (tier === 'authorised') {
       // Enterprise contact form would go here
       window.alert('A sales representative will contact you shortly.');
       return;

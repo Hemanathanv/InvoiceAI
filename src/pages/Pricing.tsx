@@ -6,12 +6,10 @@ import PricingCard from '@/components/pricing/PricingCard';
 
 const Pricing: React.FC = () => {
   const freeFeatures = [
-    { text: 'Up to 10 document uploads', included: true },
-    { text: '10 extraction requests per day', included: true },
+    { text: 'Up to 2 document uploads', included: true },
+    { text: '2 extraction requests per day', included: true },
     { text: 'Standard field extraction', included: true },
     { text: 'Custom field extraction', included: true },
-    { text: 'Basic API access', included: false },
-    { text: 'Priority support', included: false },
   ];
   
   const proFeatures = [
@@ -19,7 +17,6 @@ const Pricing: React.FC = () => {
     { text: '1000 extraction requests per day', included: true },
     { text: 'Standard field extraction', included: true },
     { text: 'Custom field extraction', included: true },
-    { text: 'Full API access', included: true },
     { text: 'Priority support', included: true },
   ];
   
@@ -28,9 +25,16 @@ const Pricing: React.FC = () => {
     { text: 'Unlimited extraction requests', included: true },
     { text: 'Standard field extraction', included: true },
     { text: 'Custom field extraction', included: true },
-    { text: 'Full API access', included: true },
     { text: 'Dedicated support', included: true },
   ];
+
+
+  const authorisedFeatures = [
+      { text: 'Only for Authorised Users', included: true },
+      { text: 'Unlimited Usage', included: true },
+      { text: 'Standard field extraction', included: true },
+      { text: 'Custom field extraction', included: true },
+    ];
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -72,6 +76,15 @@ const Pricing: React.FC = () => {
               features={enterpriseFeatures}
               buttonText="Contact Sales"
               tier="enterprise"
+            />
+
+            <PricingCard
+              title="Authorised Users"
+              description="Special plan for authorised users"
+              price={null}
+              features={authorisedFeatures}
+              buttonText="Contact Sales"
+              tier="authorised"
             />
           </div>
           

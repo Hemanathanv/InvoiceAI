@@ -135,7 +135,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ initialTab = 'login' }) => {
                   <Input 
                     id="name" 
                     name="name"
-                    placeholder="John Doe" 
+                    placeholder="Full Name" 
                     value={formData.name}
                     onChange={handleChange}
                   />

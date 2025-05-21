@@ -16,10 +16,17 @@ const Header: React.FC = () => {
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
-          <div className="h-8 w-8 rounded-full bg-gradient-primary flex items-center justify-center">
-            <span className="font-bold text-white text-lg">IE</span>
+        <div className="h-8 w-8 overflow-hidden rounded-full bg-white">
+            <img
+              src="/placeholder.svg"
+              alt="InvoiceExtract Logo"
+              className="h-full w-full object-contain"
+            />
           </div>
-          <span className="font-bold text-xl">InvoiceExtract</span>
+          {/* <div className="h-8 w-8 rounded-full bg-gradient-primary flex items-center justify-center">
+            <span className="font-bold text-white text-lg">IE</span>
+          </div> */}
+          <span className="font-bold text-xl">InvoiceAI</span>
         </Link>
         
         <nav className="hidden md:flex items-center space-x-8">

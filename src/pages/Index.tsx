@@ -1,12 +1,33 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Input } from '@/components/ui/input'; 
+import { Textarea } from '@/components/ui/textarea';
+import { toast } from '@/components/ui/sonner';
+import { MessageSquare, Star, User } from 'lucide-react';
 
 const Index: React.FC = () => {
+  const [feedbackName, setFeedbackName] = useState('');
+  const [feedbackRole, setFeedbackRole] = useState('');
+  const [feedbackMessage, setFeedbackMessage] = useState('');
+
+  const handleSubmitFeedback = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // In a real application, this would send the data to a backend
+    toast.success("Thank you for your feedback!", {
+      description: "Your testimonial has been submitted for review."
+    });
+    
+    // Reset the form
+    setFeedbackName('');
+    setFeedbackRole('');
+    setFeedbackMessage('');
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -16,6 +37,14 @@ const Index: React.FC = () => {
         <section className="relative py-24 md:py-32 overflow-hidden">
           <div className="container relative z-10">
             <div className="max-w-3xl mx-auto text-center">
+              {/* Animated AI GIF */}
+      <div className="mb-8">
+        <img
+          src="/Animation.gif"
+          alt="AI animation"
+          className="mx-auto w-32 h-32 object-contain"
+        />
+      </div>
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
                 Extract invoice data <span className="text-gradient">automatically</span>
               </h1>
@@ -151,6 +180,156 @@ const Index: React.FC = () => {
           </div>
         </section>
         
+        {/* Testimonials Section */}
+        <section className="py-20 bg-slate-50">
+          <div className="container">
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Trusted by Professionals Around the World</h2>
+              <p className="text-lg text-muted-foreground">
+                See what our users are saying about InvoiceExtract
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Testimonial 1 */}
+              <Card className="bg-white border shadow-soft">
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-4">
+                    <div className="rounded-full bg-accent w-10 h-10 flex items-center justify-center mr-3">
+                      <User className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <div className="font-medium">Accountant</div>
+                      <div className="text-sm text-muted-foreground">at TechCorp</div>
+                    </div>
+                  </div>
+                  <div className="flex mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground">
+                    "This tool has saved me countless hours. The accuracy is outstanding and setup was a breeze!"
+                  </p>
+                </CardContent>
+              </Card>
+              
+              {/* Testimonial 2 */}
+              <Card className="bg-white border shadow-soft">
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-4">
+                    <div className="rounded-full bg-accent w-10 h-10 flex items-center justify-center mr-3">
+                      <User className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <div className="font-medium">Small Business Owner</div>
+                      <div className="text-sm text-muted-foreground"></div>
+                    </div>
+                  </div>
+                  <div className="flex mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground">
+                    "Finally an easy way to process invoices without manually entering data. I absolutely love it!"
+                  </p>
+                </CardContent>
+              </Card>
+              
+              {/* Testimonial 3 */}
+              <Card className="bg-white border shadow-soft">
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-4">
+                    <div className="rounded-full bg-accent w-10 h-10 flex items-center justify-center mr-3">
+                      <User className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <div className="font-medium">Finance Manager</div>
+                      <div className="text-sm text-muted-foreground"></div>
+                    </div>
+                  </div>
+                  <div className="flex mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground">
+                    "The AI is incredibly fast and reliable. It's become an essential part of our workflow."
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+        
+        {/* Feedback Submission Form */}
+        <section className="py-20">
+          <div className="container">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-10">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Share Your Experience</h2>
+                <p className="text-lg text-muted-foreground">
+                  We'd love to hear about your experience with InvoiceAI
+                </p>
+              </div>
+              
+              <Card className="mx-auto max-w-2xl">
+                <CardContent className="p-6">
+                  <form onSubmit={handleSubmitFeedback}>
+                    <div className="space-y-4">
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium mb-1">
+                          Your Name
+                        </label>
+                        <Input 
+                          id="name" 
+                          value={feedbackName}
+                          onChange={(e) => setFeedbackName(e.target.value)}
+                          placeholder="John Doe"
+                          required
+                        />
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="role" className="block text-sm font-medium mb-1">
+                          Your Role or Company (Optional)
+                        </label>
+                        <Input 
+                          id="role" 
+                          value={feedbackRole}
+                          onChange={(e) => setFeedbackRole(e.target.value)}
+                          placeholder="Accountant at XYZ Corp"
+                        />
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="feedback" className="block text-sm font-medium mb-1">
+                          Your Feedback
+                        </label>
+                        <Textarea 
+                          id="feedback" 
+                          value={feedbackMessage}
+                          onChange={(e) => setFeedbackMessage(e.target.value)}
+                          placeholder="Share your experience with our service..."
+                          rows={4}
+                          required
+                        />
+                      </div>
+                      
+                      <div>
+                        <Button type="submit" className="w-full bg-gradient-primary">
+                          <MessageSquare className="mr-2 h-4 w-4" /> Submit Feedback
+                        </Button>
+                      </div>
+                    </div>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+        
         {/* CTA Section */}
         <section className="py-20 bg-gradient-primary">
           <div className="container">
@@ -168,7 +347,7 @@ const Index: React.FC = () => {
                   </Button>
                 </Link>
                 <Link to="/pricing">
-                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                  <Button size="lg" variant="outline" className="border-white text-primary hover:bg-white/10">
                     View Plans
                   </Button>
                 </Link>
