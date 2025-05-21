@@ -1,0 +1,186 @@
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+
+const Index: React.FC = () => {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="relative py-24 md:py-32 overflow-hidden">
+          <div className="container relative z-10">
+            <div className="max-w-3xl mx-auto text-center">
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+                Extract invoice data <span className="text-gradient">automatically</span>
+              </h1>
+              <p className="text-xl text-muted-foreground mb-10">
+                Save hours of manual data entry with our AI-powered invoice extraction platform. 
+                Process invoices, receipts, and documents in seconds.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Link to="/login" state={{ tab: 'signup' }}>
+                  <Button size="lg" className="bg-gradient-primary hover:opacity-90">
+                    Try for Free
+                  </Button>
+                </Link>
+                <Link to="/pricing">
+                  <Button size="lg" variant="outline">
+                    View Pricing
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            
+            {/* Abstract background shapes */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl aspect-[2/1] -z-10 opacity-20">
+              <div className="absolute top-0 left-0 w-3/4 h-3/4 bg-purple-light rounded-full filter blur-3xl animate-pulse-gentle"></div>
+              <div className="absolute bottom-0 right-0 w-3/4 h-3/4 bg-brand-400 rounded-full filter blur-3xl animate-pulse-gentle"></div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Features Section */}
+        <section className="py-20 bg-slate-50">
+          <div className="container">
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Key Features</h2>
+              <p className="text-lg text-muted-foreground">
+                Extract data from invoices with ease and accuracy
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <Card className="bg-white border shadow-soft">
+                <CardContent className="p-8">
+                  <div className="rounded-full bg-accent w-12 h-12 flex items-center justify-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                      <polyline points="14 2 14 8 20 8"/>
+                      <line x1="16" y1="13" x2="8" y2="13"/>
+                      <line x1="16" y1="17" x2="8" y2="17"/>
+                      <line x1="10" y1="9" x2="8" y2="9"/>
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-medium mb-3">Automatic Extraction</h3>
+                  <p className="text-muted-foreground">
+                    Our AI accurately extracts key information from your invoices, including invoice numbers, dates, and amounts.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white border shadow-soft">
+                <CardContent className="p-8">
+                  <div className="rounded-full bg-accent w-12 h-12 flex items-center justify-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                      <line x1="8" y1="21" x2="16" y2="21"/>
+                      <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-medium mb-3">Multiple Formats</h3>
+                  <p className="text-muted-foreground">
+                    Support for various document formats including PDFs, images, and scanned documents.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white border shadow-soft">
+                <CardContent className="p-8">
+                  <div className="rounded-full bg-accent w-12 h-12 flex items-center justify-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 2H2v10h10V2zM22 2h-8v6h8V2zM22 10h-8v12h8V10zM12 14H2v8h10v-8z"/>
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-medium mb-3">Custom Fields</h3>
+                  <p className="text-muted-foreground">
+                    Specify and extract custom fields based on your specific business needs.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+        
+        {/* How It Works */}
+        <section className="py-20">
+          <div className="container">
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
+              <p className="text-lg text-muted-foreground">
+                Extract data from your invoices in just three simple steps
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="relative w-16 h-16 rounded-full bg-accent flex items-center justify-center mx-auto mb-6">
+                  <span className="text-2xl font-bold text-primary">1</span>
+                </div>
+                <h3 className="text-xl font-medium mb-3">Upload Documents</h3>
+                <p className="text-muted-foreground">
+                  Upload your invoice documents in PDF or image format to our secure platform.
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <div className="relative w-16 h-16 rounded-full bg-accent flex items-center justify-center mx-auto mb-6">
+                  <span className="text-2xl font-bold text-primary">2</span>
+                </div>
+                <h3 className="text-xl font-medium mb-3">Specify Fields</h3>
+                <p className="text-muted-foreground">
+                  Choose standard fields or define custom fields for extraction.
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <div className="relative w-16 h-16 rounded-full bg-accent flex items-center justify-center mx-auto mb-6">
+                  <span className="text-2xl font-bold text-primary">3</span>
+                </div>
+                <h3 className="text-xl font-medium mb-3">Get Results</h3>
+                <p className="text-muted-foreground">
+                  Receive structured data extracted from your invoices in seconds.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* CTA Section */}
+        <section className="py-20 bg-gradient-primary">
+          <div className="container">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+                Ready to automate your invoice processing?
+              </h2>
+              <p className="text-xl text-white text-opacity-80 mb-8">
+                Join thousands of businesses saving time with InvoiceExtract.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Link to="/login" state={{ tab: 'signup' }}>
+                  <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
+                    Get Started Free
+                  </Button>
+                </Link>
+                <Link to="/pricing">
+                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                    View Plans
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      
+      <Footer />
+    </div>
+  );
+};
+
+export default Index;
