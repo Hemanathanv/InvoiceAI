@@ -286,7 +286,7 @@ const Index: React.FC = () => {
                           id="name" 
                           value={feedbackName}
                           onChange={(e) => setFeedbackName(e.target.value)}
-                          placeholder="John Doe"
+                          placeholder="Your Name"
                           required
                         />
                       </div>
@@ -299,7 +299,7 @@ const Index: React.FC = () => {
                           id="role" 
                           value={feedbackRole}
                           onChange={(e) => setFeedbackRole(e.target.value)}
-                          placeholder="Accountant at XYZ Corp"
+                          placeholder="Accountant at Tech Corp"
                         />
                       </div>
                       
